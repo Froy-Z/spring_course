@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-<!-- внедрение зависимостей -->
+    <!-- устаналиваем местоположение пользовательских данных-->
+    <context:property-placeholder location="classpath:myApp.properties"/>
+
+    <!-- IoC инверсия управления, т.е. передача прав на создание и управлению объектами Spring'у -->
     <bean id="myPet"
           class="com.frizer.spring.spring_introduction.Cat">
     </bean>
 
     <bean id="myPerson"
           class="com.frizer.spring.spring_introduction.Person">
-<!-- внедрение зависимости объявленного конструктора для Person класса-->
+
+        <!-- DI внедрение зависимости, т.е. передача прав на добавление и внедрение зависимостей Spring'ом -->
+        <!-- внедрение зависимости объявленного конструктора для Person класса-->
+        <property name="pet" ref="myPet"/>
+
+        <!-- внедрение зависимости объявленных сеттеров-->
+        <!-- value, значение которое хотим присвоить-->
+        <property name="surname" value="${person.surname}"/>
+        <property name="age" value="${person.age}"/>
 
     </bean>
 

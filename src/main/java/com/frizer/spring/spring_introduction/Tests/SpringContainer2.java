@@ -1,8 +1,9 @@
-package com.frizer.spring.spring_introduction;
+package com.frizer.spring.spring_introduction.Tests;
 
+import com.frizer.spring.spring_introduction.Person;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Test3 {
+public class SpringContainer2 {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
@@ -12,6 +13,9 @@ public class Test3 {
 //        Person person = new Person(pet);
         Person person = context.getBean("myPerson", Person.class);
         person.callYourPet();
+
+        System.out.println(person.getSurname());
+        System.out.println(person.getAge());
 
         context.close();
     }
