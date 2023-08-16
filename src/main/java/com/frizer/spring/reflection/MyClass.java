@@ -1,3 +1,5 @@
+package com.frizer.spring.reflection;
+
 public class MyClass {
     private int number;
     private String name = "default";

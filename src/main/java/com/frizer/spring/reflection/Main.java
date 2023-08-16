@@ -1,3 +1,5 @@
+package com.frizer.spring.reflection;
+
 import java.lang.reflect.Field;
 
 public class Main {
