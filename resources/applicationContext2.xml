@@ -5,9 +5,12 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- IoC инверсия управления, т.е. передача прав на создание и управлению объектами Spring'у -->
+    <!-- singleton scope по умолчанию, явно не прописывается -->
     <bean id="myPet"
-          class="com.frizer.spring.spring_introduction.Dog"
-          scope="singleton">
+          class="com.frizer.spring.spring_introduction.workWithXML.classes.Dog"
+          init-method="init"
+          destroy-method="destroy"
+          scope="prototype">
     </bean>
 
 </beans>

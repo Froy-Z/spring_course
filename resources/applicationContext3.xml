@@ -6,7 +6,7 @@
 
     <!-- IoC инверсия управления, т.е. передача прав на создание и управлению объектами Spring'у -->
     <bean id="myPet"
-          class="com.frizer.spring.spring_introduction.Dog"
+          class="com.frizer.spring.spring_introduction.workWithXML.classes.Dog"
           scope="prototype">
     </bean>
 

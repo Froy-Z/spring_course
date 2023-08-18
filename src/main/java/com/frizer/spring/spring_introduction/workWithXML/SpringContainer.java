@@ -1,6 +1,6 @@
-package com.frizer.spring.spring_introduction.Tests;
+package com.frizer.spring.spring_introduction.workWithXML;
 
-import com.frizer.spring.spring_introduction.Pet;
+import com.frizer.spring.spring_introduction.workWithXML.interfaces.Pet;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SpringContainer {
